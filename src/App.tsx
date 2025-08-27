@@ -96,6 +96,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [isVisible, setIsVisible] = useState(false);
+  const [selectedPdf, setSelectedPdf] = useState<string | null>(null);
 
   useEffect(() => {
     setIsVisible(true);
@@ -293,6 +294,25 @@ function App() {
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">No resources found</h3>
                 <p className="text-gray-400">Try adjusting your search terms or category filter.</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* PDF Viewer Section */}
+      <section className={`relative z-10 py-12 transition-all duration-1000 delay-800 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            {selectedPdf && (
+              <div className="pdf-viewer">
+                <iframe
+                  src={`/Sigma-Forensic-Scholars/pdfs/${encodeURIComponent(selectedPdf)}`}
+                  width="100%"
+                  height="600px"
+                  title={selectedPdf}
+                  style={{ border: 'none', marginTop: '20px' }}
+                />
               </div>
             )}
           </div>
