@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Search, FileText, Mail, Linkedin, BookOpen, Microscope, Shield, Eye, Download, ExternalLink } from 'lucide-react';
+import './App.css'; // We'll add styles here
 
 interface PDFResource {
   id: number;
@@ -84,7 +85,11 @@ const pdfs = [
   "6 Digital Evidence.pdf",
   "7 Forensic Toxicology.pdf",
   "8 Forensic Anthropology.pdf",
-  "9 Forensic Psychology.pdf"
+  "9 Forensic Psychology.pdf",
+  "Search Methods.pdf",
+  "7 Steps of Crime Scene Investigation.pdf",
+  "Branches of Forensic Science.pdf",
+  "Principles of Forensic Science.pdf"
 ];
 
 function App() {
