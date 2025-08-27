@@ -75,6 +75,18 @@ const pdfResources: PDFResource[] = [
   }
 ];
 
+const pdfs = [
+  "1 Basics of FS.pdf",
+  "2 Crime Scene.pdf",
+  "3 Physical Evidence.pdf",
+  "4 Biological Evidence.pdf",
+  "5 Chemical Evidence.pdf",
+  "6 Digital Evidence.pdf",
+  "7 Forensic Toxicology.pdf",
+  "8 Forensic Anthropology.pdf",
+  "9 Forensic Psychology.pdf"
+];
+
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -245,7 +257,7 @@ function App() {
                         </span>
                         <div className="flex items-center space-x-3">
                           <a
-                            href={`/pdfs/${resource.filename}`}
+                            href={`/Sigma-Forensic-Scholars/pdfs/${encodeURIComponent(resource.filename)}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center space-x-2 px-3 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25"
